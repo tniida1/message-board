@@ -1,7 +1,4 @@
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      メッセージ入力
-    </div>
+
     <div class="panel-body">
         <%= form_for(@message) do |f| %>
           <% if @message.errors.present? %>
@@ -23,7 +20,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                   <%= f.text_area :body,class: "form-control",rows: 5, placeholder: "内容" %>
                 </div>
               </div>
@@ -31,4 +28,3 @@
           </div>
         <% end %>
     </div>
-  </div>
