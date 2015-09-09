@@ -24,7 +24,19 @@
           メッセージ入力
         </div>
         <div class="panel-body">
-            <%= form_for(Message.new) do |f| %>
+            <%= form_for(@message) do |f| %>
+              <% if @message.errors.present? %>
+                <div class="alert alert-danger">
+                  <%= alert %>
+                  <ul>
+                    <% @message.errors.full_messages.each do |full_message| %>
+                      <li>
+                        <%= full_message %>
+                      </li>
+                    <% end %> 
+                  </ul>
+                </div>
+              <% end %>
                 <div class="form-horizontal">
                     <div class="form-group">
                       <div class="col-sm-3">
@@ -37,8 +49,8 @@
                       </div>
                     </div>
                     <%= f.submit class: "btn btn-sm btn-primary col-sm-2" %>
-                  </div>
-        <% end %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
