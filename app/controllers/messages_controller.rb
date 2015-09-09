@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
     # params[:message]のパラメータで、name , bodyのみを許可する
     # 有効なものを明示して他をエラー=ホワイトリスト方式=ストロングパラメータ
     # 返り値は ex:) {name:"入力されたname" , body: "入力されたbody" }
-    params.require(:message).permit(:name, :body)
+    params.require(:message).permit(:name, :body, :age)
   end
   def set_message
     # データのidが一致するメッセージを検索する
